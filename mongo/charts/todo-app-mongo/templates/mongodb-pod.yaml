@@ -20,4 +20,4 @@ spec:
         - containerPort: {{ .Values.service.port }}
       volumeMounts:
         - name: {{ include "todo-app-mongo.fullname" . }}-vol
-          mountPath: {{ .Values.volume.mountPath }}
+          mountPath: {{ .Values.volume.mountPath }}-{{ include "todo-app-mongo.fullname" . }}
